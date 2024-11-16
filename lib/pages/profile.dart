@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
                 },
                 child: const Text(
                   'Modify Account',
-                  style: TextStyle(color: Color.fromARGB(255, 255, 108, 4)),
+                  style: TextStyle(color: Color.fromARGB(255, 244, 111, 20)),
                 ),
               ),
               const SizedBox(height: 10.0),
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                 },
                 child: const Text('View User List',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 255, 108, 4),
+                      color: Color.fromARGB(255, 244, 111, 20),
                     )),
               ),
             ],

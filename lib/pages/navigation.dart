@@ -40,13 +40,14 @@ class _NavigationAppState extends State<NavigationApp> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 132, 45),
+        backgroundColor: const Color.fromARGB(255, 244, 111, 20),
       ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
+            alignment: Alignment(50, 50),
             image: AssetImage('assets/background1.jpg'),
             fit: BoxFit.cover,
           ),
@@ -69,7 +70,7 @@ class _NavigationAppState extends State<NavigationApp> {
               ),
             ],
             currentIndex: _selectedIndex,
-            selectedItemColor: const Color.fromARGB(255, 255, 108, 4),
+            selectedItemColor: const Color.fromARGB(255, 244, 111, 20),
             onTap: _onItemTapped,
           ),
           backgroundColor: Colors.transparent,

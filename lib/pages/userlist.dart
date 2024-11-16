@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'listitems.dart';
 
 class UserListScreen extends StatelessWidget {
   const UserListScreen({super.key});
@@ -23,73 +24,11 @@ class UserListScreen extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            backgroundColor: const Color.fromARGB(255, 255, 108, 4),
+            backgroundColor: const Color.fromARGB(255, 244, 111, 20),
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      // color: Color.fromARGB(255, 255, 108, 4),
-                      gradient: LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 244, 111, 20),
-                          Color.fromARGB(255, 249, 138, 51),
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/listBack.png",
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: const Row(
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "User: Mohamed@gmail.com",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22.0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 32.0,
-                                ),
-                                Text(
-                                  "Name: Mohamed",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 4.0,
-                                ),
-                                Text(
-                                  "Last name: Louati",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ))
-                      ],
-                    )),
-                const SizedBox(height: 16.0),
-              ],
-            ),
+          body: const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ListItems(),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
@@ -101,41 +40,86 @@ class UserListScreen extends StatelessWidget {
                     content: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextField(
                           decoration: InputDecoration(labelText: 'Name'),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         TextField(
                           decoration: InputDecoration(labelText: 'Last Name'),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         TextField(
                           decoration: InputDecoration(labelText: 'Email'),
                           keyboardType: TextInputType.emailAddress,
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         TextField(
                           decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
                         ),
-                        Text(
-                          "Admin",
-                          style: TextStyle(),
+                        SizedBox(
+                          height: 10,
                         ),
-                        Checkbox(value: false, onChanged: null),
+                        Row(
+                          children: [
+                            Checkbox(value: true, onChanged: null),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Admin",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                     actions: [
                       TextButton(
+                        style: TextButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5.0, horizontal: 30),
+                        ),
                         onPressed: () {
                           Navigator.of(context).pop(); // Close the dialog
                         },
-                        child: const Text('Cancel'),
+                        child: const Text(
+                          'Cancel',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 244, 111, 20),
+                          ),
+                        ),
                       ),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor:
+                              const Color.fromARGB(255, 244, 111, 20),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 30),
+                        ),
                         onPressed: () {
                           // Handle adding new user logic
                           Navigator.of(context).pop(); // Close the dialog
                         },
-                        child: const Text('Save'),
+                        child: const Text(
+                          'Save',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ],
                   );
