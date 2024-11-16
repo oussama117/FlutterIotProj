@@ -31,7 +31,6 @@ class UserListScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                    height: 250,
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -63,19 +62,26 @@ class UserListScreen extends StatelessWidget {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
+                                    fontSize: 22.0,
                                   ),
                                 ),
                                 SizedBox(
                                   height: 32.0,
                                 ),
                                 Text(
-                                  "User",
+                                  "Name: Mohamed",
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
                                   height: 4.0,
+                                ),
+                                Text(
+                                  "Last name: Louati",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ))
@@ -93,6 +99,7 @@ class UserListScreen extends StatelessWidget {
                   return AlertDialog(
                     title: const Text('Add New User'),
                     content: const Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         TextField(
@@ -109,6 +116,11 @@ class UserListScreen extends StatelessWidget {
                           decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
                         ),
+                        Text(
+                          "Admin",
+                          style: TextStyle(),
+                        ),
+                        Checkbox(value: false, onChanged: null),
                       ],
                     ),
                     actions: [
