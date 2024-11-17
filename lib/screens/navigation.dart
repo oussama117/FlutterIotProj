@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/pages/navbar.dart';
+import 'package:new_project/screens/components/navbar.dart';
 import 'home.dart'; // Make sure these files exist
-import 'cheeplist.dart'; // Make sure these files exist
+import 'cheep_list.dart'; // Make sure these files exist
 import 'profile.dart'; // Make sure these files exist
 
 class NavigationApp extends StatefulWidget {
@@ -30,31 +30,33 @@ class _NavigationAppState extends State<NavigationApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const NavBar(),
-      appBar: AppBar(
-        title: const Text(
-          "Cheep Helper",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: const Color.fromARGB(255, 244, 111, 20),
-      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            alignment: Alignment(50, 50),
             image: AssetImage('assets/background1.jpg'),
             fit: BoxFit.cover,
           ),
         ),
         child: Scaffold(
+          drawer: const NavBar(),
+          appBar: AppBar(
+            title: const Text(
+              "Cheep Helper",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            // actions: [IconButton(onPressed: null, icon: Icon(Icons.search))],
+          ),
           body: _pages[_selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
+            elevation: 30,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
@@ -76,7 +78,6 @@ class _NavigationAppState extends State<NavigationApp> {
           backgroundColor: Colors.transparent,
         ),
       ),
-      backgroundColor: Colors.transparent,
     );
   }
 }

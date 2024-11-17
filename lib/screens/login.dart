@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'navigation.dart'; // Import the NavigationApp
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+//stateful
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _LoginPageState createState() => _LoginPageState();
+  State<Login> createState() => _LoginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: Container(
         height: double.infinity,
